@@ -4,6 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CountryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +47,9 @@ Route::group(['middleware' => 'auth:company'], function () {
 
     Route::get('countries', [CountryController::class, 'index']);
 
-    Route::get('clients', [ClientController::class, 'index']);
-    Route::post('clients', [ClientController::class, 'store']);
-    Route::get('clients/{id}', [ClientController::class, 'show']);
-    Route::put('clients/{id}', [ClientController::class, 'update']);
-    Route::delete('clients/{id}', [ClientController::class, 'destroy']);
+    Route::get('customers', [CustomerController::class, 'index']);
+    Route::post('customers', [CustomerController::class, 'store']);
+    Route::get('customers/{id}', [CustomerController::class, 'show']);
+    Route::put('customers/{id}', [CustomerController::class, 'update']);
+    Route::delete('customers/{id}', [CustomerController::class, 'destroy']);
 });
